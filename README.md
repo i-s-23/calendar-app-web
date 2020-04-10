@@ -1,6 +1,6 @@
 # calendar-app-web
 
-react+typescript などを使用したcalendarアプリ。
+react+typescript などを使用した calendar アプリ。
 
 ## Contains
 
@@ -12,3 +12,5 @@ react+typescript などを使用したcalendarアプリ。
 6. storybook
 
 ## Reference material
+
+[ReactWithTypeScriptTemplate](https://github.com/I-s-23/ReactWithTypeScriptTemplate)

@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "airbnb-typescript-prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.stories.tsx"],
+        "peerDependencies": false
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,{ "extensions": [".ts", ".tsx"] }
+    ]
+  }
+}

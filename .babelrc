@@ -3,7 +3,22 @@
     ],
     "env": {
       "development": {
-        "plugins": ["babel-plugin-styled-components"]
-      }
+        "plugins": ["babel-plugin-styled-components", {
+            "minify": false
+          }
+        ]
+      },
+      // 本番環境は出力しない
+      "production": {
+        "plugins": [
+          [
+            "babel-plugin-styled-components", {
+              "fileName": false,
+              "displayName": false,
+              "pure": true
+            }
+          ]
+        ]
+      },
     }
   }

@@ -14,14 +14,15 @@ interface Props {
 function CalendarTableCell(props: Props) {
   const { wday, isTargetMonth, istargetday, children, ...other } = props;
   return (
-    <StyleTableCell wday={props.wday} isTargetMonth={props.isTargetMonth} istargetday={props.istargetday}>
-      {props.children}
+    <StyleTableCell wday={wday} isTargetMonth={isTargetMonth} istargetday={istargetday}>
+      {children}
     </StyleTableCell>
   );
 }
 
 // 引数に応じてCellの色を変化させる。対象月、本日、土日と平日などで色分け
-const StyleTableCell = styled(TableCell)<{ wday: Number; isTargetMonth: Boolean; istargetday: Boolean }>`
+// eslint-disable-next-line prettier/prettier
+const StyleTableCell = styled(TableCell)<{ wday: Number, isTargetMonth: Boolean, istargetday: Boolean }>`
   text-align: center;
   color: ${({ wday, isTargetMonth }): string => {
     if (isTargetMonth) {

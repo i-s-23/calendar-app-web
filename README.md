@@ -2,7 +2,7 @@
 
 react+typescript などを使用した calendar アプリ。
 
-## Contains
+## contents
 
 1. React
 2. TypeScript

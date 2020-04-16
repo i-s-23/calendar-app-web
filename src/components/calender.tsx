@@ -1,29 +1,8 @@
-import React, { useState, useRef } from "react";
-import format from "date-fns/format";
-import getDate from "date-fns/getDate";
-import getDay from "date-fns/getDay";
-import eachDayOfInterval from "date-fns/eachDayOfInterval";
-import endOfWeek from "date-fns/endOfWeek";
-import eachWeekOfInterval from "date-fns/eachWeekOfInterval";
-import addMonths from "date-fns/addMonths";
-import subMonths from "date-fns/subMonths";
-import startOfMonth from "date-fns/startOfMonth";
-import endOfMonth from "date-fns/endOfMonth";
+import React, { useState } from "react";
+import { format, getDate, getDay, eachDayOfInterval, endOfWeek, eachWeekOfInterval,addMonths,subMonths,startOfMonth,endOfMonth,isSameMonth,isSameDay } from "date-fns";
 import styled from "styled-components";
-import isSameMonth from "date-fns/isSameMonth";
-import isSameDay from "date-fns/isSameDay";
-import blue from "@material-ui/core/colors/blue";
-import red from "@material-ui/core/colors/red";
-import pink from "@material-ui/core/colors/pink";
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
+import { blue, red ,pink } from "@material-ui/core/colors";
+import { Paper,Button, Grid, Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
 
 // Material-UI のButtonをカッコで囲んで、styled の引数にしてCSS in JSを実現している.
 const StyledButton = styled(Button)`

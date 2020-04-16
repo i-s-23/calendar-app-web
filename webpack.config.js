@@ -4,6 +4,8 @@ const path = require("path");
 const outputPath = path.resolve(__dirname, "dist");
 
 module.exports = {
+  mode: process.env.NODE_ENV,
+
   // バンドルするファイルを指定
   entry: path.resolve(__dirname, "src/index.tsx"),
 

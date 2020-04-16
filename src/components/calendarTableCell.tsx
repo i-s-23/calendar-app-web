@@ -46,7 +46,6 @@ const StyleTableCell = styled(TableCell)<{ wday: Number, isTargetMonth: Boolean,
       }
     }
   }};
-  background: ${(istargetday): string => (istargetday ? pink[50] : blue[500])};
 `;
 
 export default CalendarTableCell;

@@ -13,7 +13,7 @@ const Title = styled.h1`
 const App: React.FC = () => {
   return (
     <div>
-      <Title>START</Title>
+      <Title>calendar-app-web</Title>
       <Calender />
     </div>
   );

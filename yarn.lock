@@ -1896,10 +1896,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@*", "@storybook/addon-actions@^8.3.1":
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.3.1.tgz#17998b880d6db75140752a4762b7e355f1cd9cd0"
-  integrity sha512-f00NxBNBcsMHqtwsOpRbZKrNMLdUjnSg1G6zYdVxAG7NwxzgpqPZm37I36ebFmgz/WO2XQ3ihxzfV2IKFuiZ6g==
+"@storybook/addon-actions@*", "@storybook/addon-actions@^8.3.2":
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-8.3.2.tgz#bded2d778f3c9309334d8e378a55723d25907f50"
+  integrity sha512-Ds2lNyEpeVO0TexoXEHpE3kRcA7rJm5X5nWz4PdvF7kiC1aX5ZMy2qEPZOH6Jvalysm+PChw4Ib+lCaoIFGOJg==
   dependencies:
     "@storybook/global" "^5.0.0"
     "@types/uuid" "^9.0.1"

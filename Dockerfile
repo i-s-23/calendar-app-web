@@ -1,5 +1,5 @@
 # ベースとするDockerImage
-FROM node:23.1-bookworm
+FROM node:23.2-bookworm
 WORKDIR /usr/app
 # パッケージの依存関係に関するファイルをホストからDocker内にコピー
 COPY package.json yarn.lock tsconfig.json ./

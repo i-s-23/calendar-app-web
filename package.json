@@ -43,7 +43,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.20.1",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
-    "prettier": "^3.5.0",
+    "prettier": "^3.5.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "styled-components": "^6.1.15",
     "ts-loader": "^9.5.2",

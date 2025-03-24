@@ -1946,10 +1946,10 @@
     polished "^4.2.2"
     uuid "^9.0.0"
 
-"@storybook/addon-links@^8.6.7":
-  version "8.6.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.6.7.tgz#a102e818137fbdd7b2fef67fac02a02e3557a17e"
-  integrity sha512-fIiXlaOa9Bv2tbBshQbh/BjzGOilXVx+6nrX9VkLOg7UvzAvivtSraRmPWjgdtsChAHC8Xac42KUCNGQ/rkf5w==
+"@storybook/addon-links@^8.6.8":
+  version "8.6.8"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-8.6.8.tgz#fd5a17edfd0977199db6bff44daa73c4a714415a"
+  integrity sha512-vj2+PPjEddSCpctPc6i5PIyAW8Ff470neoOIVX7qKc8XdhGB83yp9+qQmEBkZ1T2BI0Eu3Z+u4cqx7kjmrf2nw==
   dependencies:
     "@storybook/global" "^5.0.0"
     ts-dedent "^2.0.0"

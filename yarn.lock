@@ -1935,10 +1935,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@*", "@storybook/addon-actions@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-9.0.0.tgz#5ddd3c6ac9e7cb67deb5fbbbe7a4c25256a25908"
-  integrity sha512-dJMOSzV1h2N8hdqFV+9cR/ya/oC4qOqL8Qe5wUHJZsGwk5vtoARTIluNT+wqYpDuIrcP+E5HFo1RmjsT6lumZA==
+"@storybook/addon-actions@*", "@storybook/addon-actions@^9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-9.0.1.tgz#ae3f63c2b53656d52eea6b0012b1e3828fd9afc5"
+  integrity sha512-XD1JveiNUJdYOyLJkb+GxUtC3lgaXJ0OWdba0sWdyM+DQHixWb6RfOisbS03FiyPyyf0dWx1aYPs0tgKEjx1Nw==
 
 "@storybook/addon-links@^9.0.0":
   version "9.0.0"

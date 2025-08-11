@@ -41,7 +41,7 @@
     "babel-loader": "^10.0.0",
     "babel-plugin-styled-components": "^2.1.4",
     "cross-env": "^10.0.0",
-    "eslint": "^9.32.0",
+    "eslint": "^9.33.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "prettier": "^3.6.2",
     "react-docgen-typescript-loader": "^3.7.2",

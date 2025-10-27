@@ -29,7 +29,7 @@
     "@storybook/addon-links": "^9.1.13",
     "@storybook/addons": "^7.6.17",
     "@storybook/preset-typescript": "^3.0.0",
-    "@storybook/react": "^9.1.13",
+    "@storybook/react": "^9.1.15",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.9.1",
     "@types/react": "^18.3.13",

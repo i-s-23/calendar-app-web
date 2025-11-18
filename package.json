@@ -36,7 +36,7 @@
     "@types/react-dom": "^18.3.1",
     "@types/storybook__addon-actions": "^5.2.1",
     "@types/storybook__react": "^5.2.1",
-    "@types/styled-components": "^5.1.35",
+    "@types/styled-components": "^5.1.36",
     "@types/webpack": "^5.28.5",
     "babel-loader": "^10.0.0",
     "babel-plugin-styled-components": "^2.1.4",

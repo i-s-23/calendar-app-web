@@ -1997,10 +1997,10 @@
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-9.0.8.tgz#0a9a044c31dd20e5aaa22eb0cb4e36771f40def8"
   integrity sha512-LFePu7PPnWN0Il/uoUpmA5T0J0C7d6haJIbg0pXrjxW2MQVSYXE4S4LSUz8fOImltBDV3xAl6tLPYHFj6VcrOA==
 
-"@storybook/addon-links@^10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-10.1.0.tgz#46c91188cfa929b420c5d1c5044658a62a2f8f3a"
-  integrity sha512-05ssgNYu81v0wYtm2TmltBV0jQxyYJ4tYBo5GaSuqfaiU4JTOfW5Xfjm6+QG1TOc6EkB6h/MMhK3f3+/e97Gyw==
+"@storybook/addon-links@^10.1.2":
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-10.1.2.tgz#0f55704675e850f3046c442360b4445c65ef61e4"
+  integrity sha512-xaXdzbIWeBjjlMbq2qZKiIRpp5+Rwo654xL0BczHLpKtSNvUWmvIUUuTWIMzGFi76obTsVZL5aJ22BCh9991Qw==
   dependencies:
     "@storybook/global" "^5.0.0"
 

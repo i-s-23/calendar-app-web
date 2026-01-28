@@ -2237,18 +2237,18 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/react-dom-shim@10.2.0":
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-10.2.0.tgz#982a18692159ca70ff52004b6e4df9d2a2cea371"
-  integrity sha512-PEQofiruE6dBGzUQPXZZREbuh1t62uRBWoUPRFNAZi79zddlk7+b9qu08VV9cvf68mwOqqT1+VJ1P+3ClD2ZVw==
+"@storybook/react-dom-shim@10.2.1":
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-10.2.1.tgz#58764c032ee816c2e2c9a9a995ba9528dac868d3"
+  integrity sha512-YN4WExJGm9erWgRfrKKHUzXn4SUja6h7OR4rxlaBOGDWHIiD+8i3yfNnPOYh1DaATa2w/6e84IAKJQdkvAUxfA==
 
-"@storybook/react@*", "@storybook/react@^10.2.0":
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-10.2.0.tgz#1338a0fd998163f549ba85184eb16f00bcca3ef9"
-  integrity sha512-ciJlh1UGm0GBXQgqrYFeLmiix+KGFB3v37OnAYjGghPS9OP6S99XyshxY/6p0sMOYtS+eWS2gPsOKNXNnLDGYw==
+"@storybook/react@*", "@storybook/react@^10.2.1":
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-10.2.1.tgz#e43b98f903059639902f0771f497bb7135df1854"
+  integrity sha512-drs4btT34sgbXWnVgXTHJvAsPvnAYihgeOWW2BWATldAm2gXeopeSHnXMDMSLS/2bMtC3ALOZjzCHVaoL9ku3A==
   dependencies:
     "@storybook/global" "^5.0.0"
-    "@storybook/react-dom-shim" "10.2.0"
+    "@storybook/react-dom-shim" "10.2.1"
     react-docgen "^8.0.2"
 
 "@storybook/router@7.6.17":

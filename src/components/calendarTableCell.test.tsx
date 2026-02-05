@@ -16,7 +16,7 @@ describe("CalendarTableCell component", () => {
     // '15'というテキストが表示されていることを確認します。
     expect(screen.getByText("15")).toBeInTheDocument();
     // テキストの色が黒であることを確認します。
-    expect(screen.getByText("15")).toHaveStyle('color: black');
+    expect(screen.getByText("15")).toHaveStyle('color: rgb(0, 0, 0)');
   });
 
   // Test case 2: 日曜日（対象月）のレンダリングをテスト
@@ -30,7 +30,7 @@ describe("CalendarTableCell component", () => {
     // '14'というテキストが表示されていることを確認します。
     expect(screen.getByText("14")).toBeInTheDocument();
     // テキストの色がred[500]であることを確認します。
-    expect(screen.getByText("14")).toHaveStyle(`color: ${red[500]}`);
+    expect(screen.getByText("14")).toHaveStyle('color: rgb(244, 67, 54)');
   });
 
   // Test case 3: 土曜日（対象月）のレンダリングをテスト
@@ -44,7 +44,7 @@ describe("CalendarTableCell component", () => {
     // '16'というテキストが表示されていることを確認します。
     expect(screen.getByText("16")).toBeInTheDocument();
     // テキストの色がblue[500]であることを確認します。
-    expect(screen.getByText("16")).toHaveStyle(`color: ${blue[500]}`);
+    expect(screen.getByText("16")).toHaveStyle('color: rgb(33, 150, 243)');
   });
 
   // Test case 4: 平日（対象外月）のレンダリングをテスト
@@ -58,7 +58,7 @@ describe("CalendarTableCell component", () => {
     // '1'というテキストが表示されていることを確認します。
     expect(screen.getByText("1")).toBeInTheDocument();
     // テキストの色がblackであることを確認します。
-    expect(screen.getByText("1")).toHaveStyle('color: black');
+    expect(screen.getByText("1")).toHaveStyle('color: rgb(0, 0, 0)');
   });
 
   // Test case 5: 日曜日（対象外月）のレンダリングをテスト
@@ -72,7 +72,7 @@ describe("CalendarTableCell component", () => {
     // '31'というテキストが表示されていることを確認します。
     expect(screen.getByText("31")).toBeInTheDocument();
     // テキストの色がred[200]であることを確認します。
-    expect(screen.getByText("31")).toHaveStyle(`color: ${red[200]}`);
+    expect(screen.getByText("31")).toHaveStyle('color: rgb(239, 154, 154)');
   });
 
   // Test case 6: 土曜日（対象外月）のレンダリングをテスト
@@ -86,6 +86,6 @@ describe("CalendarTableCell component", () => {
     // '6'というテキストが表示されていることを確認します。
     expect(screen.getByText("6")).toBeInTheDocument();
     // テキストの色がblue[200]であることを確認します。
-    expect(screen.getByText("6")).toHaveStyle(`color: ${blue[200]}`);
+    expect(screen.getByText("6")).toHaveStyle('color: rgb(144, 202, 249)');
   });
 });

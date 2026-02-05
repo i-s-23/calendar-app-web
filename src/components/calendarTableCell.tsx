@@ -4,8 +4,8 @@ import { blue, red } from "@mui/material/colors";
 import { TableCell } from "@mui/material";
 
 interface Props {
-  wday: Number;
-  isTargetMonth: Boolean;
+  wday: number;
+  isTargetMonth: boolean;
   istargetday: boolean;
   children: any;
 }
@@ -22,7 +22,9 @@ function CalendarTableCell(props: Props) {
 
 // 引数に応じてCellの色を変化させる。対象月、本日、土日と平日などで色分け
 // eslint-disable-next-line prettier/prettier
-const StyleTableCell = styled(TableCell)<{ wday: Number, isTargetMonth: Boolean, istargetday: Boolean }>`
+const StyleTableCell = styled(TableCell, {
+  shouldForwardProp: (prop) => prop !== 'wday' && prop !== 'isTargetMonth' && prop !== 'istargetday',
+})<{ wday: number, isTargetMonth: boolean, istargetday: boolean }>`
   text-align: center;
   color: ${({ wday, isTargetMonth }): string => {
     if (isTargetMonth) {

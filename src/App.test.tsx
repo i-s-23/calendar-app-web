@@ -16,9 +16,12 @@ describe("App component", () => {
     // これはAppコンポーネントのタイトルです。
     expect(screen.getByText("calendar-app-web")).toBeInTheDocument();
 
-    // '日', '月', '火', '水', '木', '金', '土' のいずれかのテキストを持つ要素がドキュメント内に存在するかを確認します。
-    // これはCalendarコンポーネントの曜日表示の一部であり、Calendarコンポーネントがレンダリングされていることを確認します。
-    // getByTextは厳密なマッチングを行うため、いずれかの曜日が存在すればOKとします。
-    expect(screen.getByText(/日|月|火|水|木|金|土/)).toBeInTheDocument();
+    // カレンダーの曜日が表示されていることを確認します。
+    // getByRole('columnheader')を使ってテーブルヘッダーのセル（<th>）を取得し、
+    // それぞれの曜日のテキストが含まれていることを確認します。
+    const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+    weekdays.forEach(day => {
+      expect(screen.getByRole("columnheader", { name: day })).toBeInTheDocument();
+    });
   });
 });

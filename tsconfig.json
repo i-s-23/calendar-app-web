@@ -7,9 +7,9 @@
     "jsx": "react",
     "strict": true,
     "moduleResolution": "bundler",
-    "types": ["react", "node"],
+    "types": ["react", "node", "vitest/globals"],
     "esModuleInterop": true
   },
   "include": ["src"],
-  "exclode": ["node_modules"]
+  "exclude": ["node_modules"]
 }

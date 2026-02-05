@@ -14,7 +14,7 @@ import {
   isSameDay
 } from "date-fns";
 import styled from "styled-components";
-import { Paper, Button, Grid, Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
+import { Paper, Button, Grid, Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import CalendarTableCell from "./calendarTableCell";
 
 // Material-UI のButtonをカッコで囲んで、styled の引数にしてCSS in JSを実現している.
@@ -61,7 +61,7 @@ const calendar: React.FC = () => {
   return (
     <div>
       <StyledPaper>
-        <Grid container justify="space-between">
+        <Grid container justifyContent="space-between">
           <Grid item>
             <StyledButton type="button" onClick={(): void => setTargetDate(current => subMonths(current, 1))}>
               前の月

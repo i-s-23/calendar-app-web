@@ -13,7 +13,7 @@ import {
   isSameMonth,
   isSameDay
 } from "date-fns";
-import styled from "styled-components";
+import { styled } from "@mui/material/styles";
 import { Paper, Button, Grid, Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import CalendarTableCell from "./calendarTableCell";
 

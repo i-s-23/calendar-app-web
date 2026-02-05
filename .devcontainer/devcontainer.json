@@ -1,14 +1,34 @@
 {
 	"name": "React Dockerfile",
-	"context": "..",
-	"dockerFile": "../Dockerfile",
+	"image": "node:24-bookworm",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"customizations": {
 		"vscode": {
-			"settings": {},
-			"extensions":  ["eamodio.gitlens","chakrounanas.turbo-console-log","visualstudioexptteam.vscodeintellicode","esbenp.prettier-vscode","dbaeumer.vscode-eslint","shardulm94.trailing-spaces","msjsdiag.debugger-for-chrome","christian-kohler.path-intellisense","usernamehw.errorlens","gizak.shortcuts","coenraads.bracket-pair-colorizer-2","GitHub.vscode-pull-request-github"]
+			"settings": {
+				// ブラケットのペアを色付け（拡張機能不要に）
+				"editor.bracketPairColorization.enabled": true,
+				"editor.guides.bracketPairs": "active",
+				// 保存時に行末の空白を自動削除
+				"files.trimTrailingWhitespace": true,
+				// 保存時にPrettierやESLintを実行
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "explicit"
+				}
+			},
+			"extensions": [
+				"eamodio.gitlens",
+				"chakrounanas.turbo-console-log",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"christian-kohler.path-intellisense",
+				"usernamehw.errorlens",
+				"gizak.shortcuts"
+			]
 		}
 	},
-	"postCreateCommand": "apt-get update && apt-get install -y curl git",
+	"postCreateCommand": "npm install -g @google/gemini-cli pnpm",
 	"features": {
 		"github-cli": "latest"
 	}

@@ -1,11 +1,11 @@
 {
   "name": "react-typescript-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "main": "index.tsx",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --devtool cheap-module-source-map",
-    "build": "cross-env NODE_ENV=production webpack --progress",
+    "start": "vite",
+    "build": "vite build",
     "lint": "eslint --ext .ts,.tsx src/",
     "lint:fix": "eslint --ext .ts,.tsx src/ --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,16 +15,17 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0",
-    "react": "^18.3.1",
+    "react": "^19.2.4",
     "react-chartjs-2": "^5.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1"
+    "react-dom": "^19.2.4"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
     "@babel/core": "^7.29.0",
-    "@material-ui/core": "^4.12.4",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.7",
     "@storybook/addon-actions": "^9.0.8",
     "@storybook/addon-links": "^10.2.6",
     "@storybook/addons": "^7.6.17",
@@ -32,24 +33,16 @@
     "@storybook/react": "^10.2.6",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.2.0",
-    "@types/react": "^18.3.13",
-    "@types/react-dom": "^18.3.1",
-    "@types/storybook__addon-actions": "^5.2.1",
-    "@types/storybook__react": "^5.2.1",
+    "@types/react": "^19.2.11",
+    "@types/react-dom": "^19.2.3",
     "@types/styled-components": "^5.1.36",
-    "@types/webpack": "^5.28.5",
-    "babel-loader": "^10.0.0",
+    "@vitejs/plugin-react": "^5.1.3",
     "babel-plugin-styled-components": "^2.1.4",
-    "cross-env": "^10.1.0",
     "eslint": "^9.39.2",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "prettier": "^3.8.1",
-    "react-docgen-typescript-loader": "^3.7.2",
     "styled-components": "^6.3.8",
-    "ts-loader": "^9.5.4",
     "typescript": "^5.9.3",
-    "webpack": "^5.105.0",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.3"
+    "vite": "^7.3.1"
   }
 }

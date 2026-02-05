@@ -14,7 +14,7 @@ import {
   isSameDay
 } from "date-fns";
 import styled from "styled-components";
-import { Paper, Button, Grid, Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@material-ui/core";
+import { Paper, Button, Grid, Typography, Table, TableBody, TableCell, TableHead, TableRow } from "@mui/material";
 import CalendarTableCell from "./calendarTableCell";
 
 // Material-UI のButtonをカッコで囲んで、styled の引数にしてCSS in JSを実現している.
@@ -48,7 +48,7 @@ const getCalendarArray = (date: Date): Date[][] => {
     start: startOfMonth(date),
     end: endOfMonth(date)
   });
-  return sundays.map(sunday => eachDayOfInterval({ start: sunday, end: endOfWeek(sunday) }));
+  return sundays.map((sunday: Date) => eachDayOfInterval({ start: sunday, end: endOfWeek(sunday) }));
 };
 
 // カレンダーを表示するReactのFunctionComponent
@@ -61,18 +61,18 @@ const calendar: React.FC = () => {
   return (
     <div>
       <StyledPaper>
-        <Grid container justify="space-between">
-          <Grid item>
+        <Grid container justifyContent="space-between">
+          <Grid>
             <StyledButton type="button" onClick={(): void => setTargetDate(current => subMonths(current, 1))}>
               前の月
             </StyledButton>
           </Grid>
-          <Grid item>
+          <Grid>
             <StyledButton type="button" onClick={(): void => setTargetDate(new Date())}>
               今月
             </StyledButton>
           </Grid>
-          <Grid item>
+          <Grid>
             <StyledButton type="button" onClick={(): void => setTargetDate(current => addMonths(current, 1))}>
               次の月
             </StyledButton>

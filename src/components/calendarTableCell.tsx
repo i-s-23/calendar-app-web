@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { blue, red, pink } from "@material-ui/core/colors";
-import { TableCell } from "@material-ui/core";
+import { blue, red, pink } from "@mui/material/colors";
+import { TableCell } from "@mui/material";
 
 interface Props {
   wday: Number;

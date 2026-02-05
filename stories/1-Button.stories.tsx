@@ -1,20 +1,33 @@
-import React from "react";
-import { action } from "@storybook/addon-actions";
-import { Button } from "@storybook/react/demo";
+import React from 'react';
+import { fn } from '@storybook/test';
 
 export default {
-  title: "Button",
-  component: Button
+  title: 'Button',
+  component: 'button',
+  parameters: {
+    // Optional: add some parameter for better categorization
+  },
+  args: {
+    onClick: fn(), // Use fn() for onClick action logging
+  },
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
 };
 
-export const Text = () => (
-  <Button onClick={action("clicked")}>Hello Button</Button>
-);
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
+export const Text = {
+  args: {
+    children: 'Hello Button',
+  },
+};
 
-export const Emoji = () => (
-  <Button onClick={action("clicked")}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Button>
-);
+export const Emoji = {
+  args: {
+    children: (
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
+    ),
+  },
+};

@@ -48,7 +48,7 @@ const getCalendarArray = (date: Date): Date[][] => {
     start: startOfMonth(date),
     end: endOfMonth(date)
   });
-  return sundays.map(sunday => eachDayOfInterval({ start: sunday, end: endOfWeek(sunday) }));
+  return sundays.map((sunday: Date) => eachDayOfInterval({ start: sunday, end: endOfWeek(sunday) }));
 };
 
 // カレンダーを表示するReactのFunctionComponent
@@ -62,17 +62,17 @@ const calendar: React.FC = () => {
     <div>
       <StyledPaper>
         <Grid container justifyContent="space-between">
-          <Grid item>
+          <Grid>
             <StyledButton type="button" onClick={(): void => setTargetDate(current => subMonths(current, 1))}>
               前の月
             </StyledButton>
           </Grid>
-          <Grid item>
+          <Grid>
             <StyledButton type="button" onClick={(): void => setTargetDate(new Date())}>
               今月
             </StyledButton>
           </Grid>
-          <Grid item>
+          <Grid>
             <StyledButton type="button" onClick={(): void => setTargetDate(current => addMonths(current, 1))}>
               次の月
             </StyledButton>

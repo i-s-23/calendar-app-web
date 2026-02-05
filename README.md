@@ -6,10 +6,16 @@ react+typescript などを使用した calendar アプリ。
 
 1. React
 2. TypeScript
-3. Webpack
+3. ~~Webpack~~ --> Vite
 4. Eslint
 5. prettier
 6. storybook
+
+## Usage
+
+```bash
+pnpm start
+```
 
 ## library
 

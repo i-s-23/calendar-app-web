@@ -2,12 +2,12 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "target": "es6",
-    "module": "commonjs",
+    "module": "esnext",
     "lib": ["esnext", "dom"],
     "jsx": "react",
     "strict": true,
-    "rootDirs": ["src"],
-    "types": ["react"],
+    "moduleResolution": "bundler",
+    "types": ["react", "node"],
     "esModuleInterop": true
   },
   "include": ["src"],

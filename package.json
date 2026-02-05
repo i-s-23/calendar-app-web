@@ -1,6 +1,6 @@
 {
   "name": "react-typescript-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "main": "index.tsx",
   "scripts": {
@@ -17,8 +17,7 @@
     "date-fns": "^4.1.0",
     "react": "^19.2.4",
     "react-chartjs-2": "^5.3.1",
-    "react-dom": "^19.2.4",
-    "react-scripts": "5.0.1"
+    "react-dom": "^19.2.4"
   },
   "keywords": [],
   "author": "",

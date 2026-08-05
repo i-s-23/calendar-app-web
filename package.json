@@ -50,7 +50,7 @@
     "overrides": {
       "vitest": "^4.1.0",
       "esbuild": "^0.28.1",
-      "undici": "^7.28.0",
+      "undici": "^7.29.0",
       "js-yaml": "^3.15.0",
       "brace-expansion": "^5.0.7",
       "postcss": "^8.5.18"

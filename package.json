@@ -26,7 +26,7 @@
   "devDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/material": "^7.3.8",
+    "@mui/material": "^9.4.0",
     "@storybook/addon-docs": "^10.2.11",
     "@storybook/react": "^10.2.11",
     "@storybook/react-vite": "^10.2.11",

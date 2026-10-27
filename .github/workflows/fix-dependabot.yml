@@ -179,8 +179,9 @@ jobs:
       # 各パッケージファイルにバージョン制約を書き込む
       #
       # バージョン制約の方針:
-      # - JS (pnpm/yarn/npm overrides): ^FIXED を使用
-      #   >= だと次のメジャーバージョンまで許容してしまうため、semver の ^ で上限を設ける
+      # - JS (pnpm/yarn/npm overrides): >=FIXED を使用
+      #   ^FIXED だと first_patched_version がそのメジャー系列に存在しない場合
+      #   (例: vite 2.14.2 は未リリース) に NO_MATCHING_VERSION で失敗するため >= に変更
       # - Python (pip): >=FIXED を使用（PEP 440 は ^ 記号が無効）
       # - Python (poetry/pipenv): >=FIXED,<NEXT_MAJOR を使用（次期メジャーを許容しない）
       #
@@ -194,18 +195,19 @@ jobs:
             FIXED=$(echo "$alert" | jq -r '.fixed')
 
             if [ "$PKG_MANAGER" = "pnpm" ]; then
-              # pnpm.overrides に ^FIXED でピンする（semver: メジャーバージョン内に限定）
-              jq --arg pkg "$PKG" --arg ver "^$FIXED" \
+              # pnpm.overrides に >=FIXED でピンする
+              # ^FIXED だと first_patched_version がそのメジャー系列に存在しないとき失敗するため >= を使用
+              jq --arg pkg "$PKG" --arg ver ">=$FIXED" \
                 '.pnpm.overrides[$pkg] = $ver' \
                 package.json > "${RUNNER_TEMP}/pkg.json" && mv "${RUNNER_TEMP}/pkg.json" package.json
 
             elif [ "$PKG_MANAGER" = "yarn" ]; then
-              jq --arg pkg "$PKG" --arg ver "^$FIXED" \
+              jq --arg pkg "$PKG" --arg ver ">=$FIXED" \
                 '.resolutions[$pkg] = $ver' \
                 package.json > "${RUNNER_TEMP}/pkg.json" && mv "${RUNNER_TEMP}/pkg.json" package.json
 
             elif [ "$PKG_MANAGER" = "npm" ]; then
-              jq --arg pkg "$PKG" --arg ver "^$FIXED" \
+              jq --arg pkg "$PKG" --arg ver ">=$FIXED" \
                 '.overrides[$pkg] = $ver' \
                 package.json > "${RUNNER_TEMP}/pkg.json" && mv "${RUNNER_TEMP}/pkg.json" package.json
 

@@ -17,30 +17,45 @@ jobs:
           github-token: ${{ github.token }}
       - name: Skip non-patch updates
         if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-patch' }}
-        run: |
-          echo "update-type=${{ steps.metadata.outputs.update-type }} のため自動マージをスキップします（patch のみ対象）"
-      - name: Update PR branch if behind base
+        run: echo "update-type=${{ steps.metadata.outputs.update-type }} のため自動マージをスキップします（patch のみ対象）"
+      - name: Checkout PR branch
         if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
-        run: gh pr update-branch "$PR_URL" 2>/dev/null || true
-        env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{ github.token }}
-      - name: Check for merge conflicts
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Sync with main and resolve conflicts
         if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
+        id: sync
         run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git fetch origin main
           MERGEABLE=$(gh pr view "$PR_URL" --json mergeable --jq '.mergeable')
           echo "mergeable=$MERGEABLE"
           if [ "$MERGEABLE" = "CONFLICTING" ]; then
-            echo "::error::コンフリクトが検出されました。@dependabot rebase をリクエストします。"
-            gh pr comment "$PR_URL" --body "@dependabot rebase"
-            exit 1
+            echo "::notice::コンフリクトを検出。main をマージして pnpm-lock.yaml を再生成します（base ブランチ優先）。"
+            git merge origin/main -X theirs --no-edit || {
+              echo "::error::自動解消に失敗しました。手動対応が必要です。"
+              exit 1
+            }
+            PNPM_VERSION=$(node -e "const p=require('./package.json');const pm=p.packageManager||'';console.log(pm.startsWith('pnpm@')?pm.split('@')[1]:'latest')" 2>/dev/null || echo "latest")
+            npm install -g pnpm@$PNPM_VERSION --silent
+            pnpm install --no-frozen-lockfile
+            git add pnpm-lock.yaml
+            git diff --staged --quiet || git commit -m "chore: regenerate pnpm-lock.yaml"
+            git push origin "${{ github.head_ref }}"
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          else
+            gh pr update-branch "$PR_URL" 2>/dev/null || true
+            echo "pushed=false" >> $GITHUB_OUTPUT
           fi
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{ github.token }}
       - name: Auto-merge (patch only)
-        if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
+        if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' && steps.sync.outputs.pushed != 'true' }}
         run: gh pr merge --merge "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{ github.token }}
+

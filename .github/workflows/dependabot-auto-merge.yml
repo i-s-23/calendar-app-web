@@ -20,7 +20,7 @@ jobs:
         run: echo "update-type=${{ steps.metadata.outputs.update-type }} のため自動マージをスキップします（patch のみ対象）"
       - name: Checkout PR branch
         if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.head_ref }}
       - name: Sync with main and resolve conflicts

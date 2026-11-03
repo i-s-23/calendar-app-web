@@ -56,7 +56,8 @@
       "postcss": "^8.5.18",
       "source-map-js": "^1.2.2",
       "storybook": ">=8.6.19",
-      "vite": ">=2.14.2"
+      "vite": ">=2.14.2",
+      "minimatch": ">=11.0.1"
     }
   }
 }
